@@ -1,14 +1,24 @@
-<p>movies-table works!</p>
-<table>
-    <th>
-        <tr>
-            id
-        </tr>
-        <td>
-            name
-        </td>
-    </th>
-    <td>
+<app-search></app-search>
+<table id="table">
 
-    </td>
+    <tr>
+        <th id="check">
+            <input type="checkbox" id="checkBoxAll" name="checkBoxAll" [checked]="checkAll" (change)="checkBoxFunction($event)">
+        </th>
+        <th>Title</th>
+        <th>Director</th>
+        <th>Opening Crawl</th>
+        <th>Created</th>
+    </tr>
+    <tr *ngFor="let film of filmList">
+        <td id="checkbox-row">
+            <input type="checkbox" id="checkBox1" name="checkBox1" [checked]="checkBoxs">
+        </td>
+        <td>{{film.title}}</td>
+        <td>{{film.director}}</td>
+        <td>{{film.opening_crawl}}</td>
+        <td>{{film.release_date.toISOString().split('T')[0]}}</td>
+
+    </tr>
+
 </table>
