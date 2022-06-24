@@ -16,7 +16,8 @@ import {TESTLIST} from '../models/test';
 
 export class MoviesTableComponent implements OnInit {
 
-  filmList: Array<Film> = [];
+  filmList: Film[] = TESTLIST;
+  filmList2: Array<Film> = [];
   characterList: Array<People> = [];
   
   
@@ -31,13 +32,27 @@ export class MoviesTableComponent implements OnInit {
   ngOnInit(): void {
 
     //test
-    this.filmList = TESTLIST;
+    //this.filmList = TESTLIST;
     
-    this.swService.getFilms().subscribe(x => {
-      this.filmList = x;
+    this.swService.getFilms().subscribe(data => {
+      this.filmList = data;
+      });
+
+      /*
+      this.filmList2.forEach(element => {
+        let film: Film;
+        this.filmList.push(film = {
+          title : element.title, 
+          episode_id: element.episode_id,
+          opening_crawl:element.opening_crawl,
+          director: element.director, 
+          producer: element.producer,
+          release_date: element.release_date
+        })});
+   */
+
       console.log(this.filmList); 
 
-    })
 
     this.swService.getCharacters().subscribe(data => {
       this.characterList = data;
