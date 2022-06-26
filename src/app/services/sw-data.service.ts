@@ -13,7 +13,7 @@ export class SwDataService {
 
   
   getFilms(): Observable<Array<Film>>{
-    return this.http.get<Array<Film>>('https://swapi.dev/api/films/')
+    return this.http.get<Array<Film>>('https://swapi.dev/api/films/1')
   }
   /*
   getFilms(): Observable<Array<Film>>{

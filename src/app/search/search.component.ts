@@ -12,4 +12,13 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  filmSearch(e: any): void{
+    let szoveg = "sfvsaf"
+    let textbox = document.getElementById("searchTb");
+    if(e.searchTb.value < 1){
+    console.log("sikerült !!!");
+    }
+  }
+
 }

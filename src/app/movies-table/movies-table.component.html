@@ -1,5 +1,4 @@
-<app-search></app-search>
-<table id="table">
+< <table id="table">
 
     <tr>
         <th id="check">
@@ -10,15 +9,16 @@
         <th>Opening Crawl</th>
         <th>Created</th>
     </tr>
-    <tr *ngFor="let film of filmList">
-        <td id="checkbox-row">
+    <!-- át kéne passzolni a film "episod_id"-t és ez alapján adnánk vissza a karaktereken-->
+    <tr id="tableRow" *ngFor="let results of filmList" onclick="showCharacters()">
+        <td id="checkbox-row ">
             <input type="checkbox" id="checkBox1" name="checkBox1" [checked]="checkBoxs">
         </td>
-        <td>{{film.title}}</td>
-        <td>{{film.director}}</td>
-        <td>{{film.opening_crawl}}</td>
-        <td>{{film.release_date.toISOString().split('T')[0]}}</td>
+        <td id="filmParams">{{results.title}}</td>
+        <td id="filmParams">{{results.director}}</td>
+        <td id="filmParams">{{results.opening_crawl}}</td>
+        <td id="filmParams">{{results.release_date.toISOString().split('T')[0]}}</td>
 
     </tr>
 
-</table>
+    </table>

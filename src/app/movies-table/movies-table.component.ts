@@ -18,8 +18,7 @@ export class MoviesTableComponent implements OnInit {
 
   filmList: Film[] = TESTLIST;
   filmList2: Array<Film> = [];
-  characterList: Array<People> = [];
-  
+  filmList3: Array<Film> = [];
   
   constructor(private swService: SwDataService){
 
@@ -27,17 +26,23 @@ export class MoviesTableComponent implements OnInit {
   
   
   
- 
-  
   ngOnInit(): void {
 
-    //test
-    //this.filmList = TESTLIST;
-    
+    //#region GET films
     this.swService.getFilms().subscribe(data => {
-      this.filmList = data;
-      });
+      this.filmList2 = data;   //filmList is not Array. Theres is a obj.
+      
+       // key check
 
+      //for (let key in this.filmList2){
+        //console.log(`${key} = ${data[key]}`); }
+
+      //typeOf check
+      //console.log("results" in this.filmList2);
+    });
+//#endregion
+
+      //#region try
       /*
       this.filmList2.forEach(element => {
         let film: Film;
@@ -50,27 +55,16 @@ export class MoviesTableComponent implements OnInit {
           release_date: element.release_date
         })});
    */
+  //#endregion
 
-      console.log(this.filmList); 
+ 
 
-
-    this.swService.getCharacters().subscribe(data => {
-      this.characterList = data;
-      console.log(this.characterList); 
-
-     
-      
-    })
-
-
-    
-    
     
   }
 
+//#region Checkbox
   checkBoxs=false;
   checkAll=false;
-
 
 checkBoxFunction(e:any): void{
     this.checkBoxs = true;
@@ -80,9 +74,7 @@ checkBoxFunction(e:any): void{
       this.checkBoxs= false;
     }
   }
-/*
-   
-  */
-  
+  //#endregion
+
 
 }
