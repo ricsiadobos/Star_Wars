@@ -2,7 +2,7 @@
         
         html,
         body {
-            height: 80%;
+            height: 100%;
             margin-top: 2vh;
             font-family: Roboto, "Helvetica Neue", sans-serif;
         }
@@ -12,18 +12,19 @@
             margin-bottom: 5vh;
             text-align: center;
             background-image: url('./assets/pic/sw\ bg.jpg');
-            font-family: Roboto, "Helvetica Neue", sans-serif;
+            font-family: Roboto, "Helvetica Neue", serif;
             h1 {
                 font-weight: bold;
-                color: white;
+                font-size: 25px;
+                color: whitesmoke;
                 letter-spacing: 4px;
             }
         }
         
         table {
-            width: 80%;
+            width: 90%;
             position: relative;
-            left: 10vh;
+            left: 5vh;
             border-collapse: collapse;
         }
         
