@@ -11,9 +11,15 @@ export class SwDataService {
 
   constructor(private http: HttpClient) {}
 
-  
+  /*
+
   getFilms(): Observable<Array<Film>>{
-    return this.http.get<Array<Film>>('https://swapi.dev/api/films/1')
+    return this.http.get<Array<Film>>('https://swapi.dev/api/films/')
+  }
+    */
+
+  getFilms(): Observable<any>{
+    return this.http.get<any>('https://swapi.dev/api/films/')
   }
   /*
   getFilms(): Observable<Array<Film>>{
@@ -33,8 +39,8 @@ export class SwDataService {
 
   }
 */
-  getCharacters(): Observable<Array<People>>{
-    return this.http.get<Array<People>>('https://swapi.dev/api/people/')
+  getCharacters(): Observable<any>{
+    return this.http.get<any>('https://swapi.dev/api/people/')
 
   }
 

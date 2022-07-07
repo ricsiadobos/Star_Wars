@@ -11,7 +11,7 @@ import { SwDataService } from '../services/sw-data.service';
 })
 export class CharactersComponent implements OnInit {
 
-  characterList: Array<People> = TESTPEOPLE;
+  characterList: Array<People> = [];
   
   constructor(private swService: SwDataService) { }
 
@@ -21,7 +21,7 @@ export class CharactersComponent implements OnInit {
 
 
     this.swService.getCharacters().subscribe(data => {
-      this.characterList = data;
+      this.characterList = data.results;
       console.log(this.characterList); 
 
     })

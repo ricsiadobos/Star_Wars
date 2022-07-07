@@ -11,7 +11,7 @@ export interface Film {
 	planets: string[],
 	starships: string[],
 	vehicles: string[],
-	species: string[],
+	species: string[],	
 	created: Date,
 	edited: Date,
 	url: string
