@@ -1,4 +1,4 @@
-<table id="movie_table">
+<table id="movie_table" [hidden]="hidden_table">
 
     <tr>
         <th id="check">
@@ -10,7 +10,7 @@
         <th>Created</th>
     </tr>
     <!-- át kéne passzolni a film "episod_id"-t és ez alapján adnánk vissza a karaktereken-->
-    <tr id="tableRow" *ngFor="let item of filmList" onclick="showCharacters()">
+    <tr id="tableRow" *ngFor="let item of filmList" click="">
         <td id="checkbox-row">
             <input type="checkbox" id="checkBox1" name="checkBox1" [checked]="checkBoxs">
         </td>

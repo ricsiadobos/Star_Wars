@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MoviesTableComponent } from '../movies-table/movies-table.component';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -7,18 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+  seachCharacters : string = "";
   constructor() { }
 
   ngOnInit(): void {
   }
 
 
-  filmSearch(e: any): void{
-    let szoveg = "sfvsaf"
-    let textbox = document.getElementById("searchTb");
-    if(e.searchTb.value < 1){
+  filmSearch(e: Event){
+  console.log(e);
+    this.seachCharacters = (<HTMLInputElement>e.target).value;
+    console.log(this.seachCharacters);
+
+    if(this.seachCharacters.length > 2){
     console.log("sikerült !!!");
+   MoviesTableComponent.prototype.filmListFilter(this.seachCharacters);
     }
+    
   }
 
 }
+
+

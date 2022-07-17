@@ -1,4 +1,4 @@
-<table id="charactersTable">
+<table id="charactersTable" [hidden]="hidden_character">
 
     <tr>
         <th>Name</th>
@@ -7,7 +7,7 @@
         <th>Birth Year</th>
     </tr>
     <!-- át kéne passzolni a film "episod_id"-t és ez alapján adnánk vissza a karaktereken-->
-    <tr id="tableRow" *ngFor="let character of characterList" onclick="showCharacters()">
+    <tr id="tableRow" *ngFor="let character of characterList" onclick="showCharacters($event)">
 
         <td>{{character.name}}</td>
         <td>{{character.height}}</td>
