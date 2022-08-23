@@ -5,15 +5,14 @@
     </div>
 </header>
 
-<app-search>
+<app-search [searchFilmList]="getFilmList" (updateFilmList)="setFilmList($event)">
 </app-search>
 
-<app-movies-table>
+<app-movies-table *ngIf="!filteredFilmList.length" [filmList]="getFilmList">
+</app-movies-table>
+<app-movies-table *ngIf="filteredFilmList.length" [filmList]="filteredFilmList">
 </app-movies-table>
 
-<br>
-<h4>Characters</h4>
-<br>
 <app-characters>
 </app-characters>
 
